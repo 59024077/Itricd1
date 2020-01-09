@@ -108,24 +108,24 @@ function add_leave() {
             url: "record_leave.html",
             success: function (data) {
                 $("#hidden_record").html(data);
-                var text = '';
-                if(type_leave == 1){
-                    text = 'ลาป่วย'
-                }else if(type_leave == 2){
-                    text = 'ลากิจส่วนตัว'
-                }else if(type_leave == 3){
-                    text = 'ลาคลอดบุตร'
-                }else if(type_leave == 4){
-                    text = 'ลาพักผ่อน'
-                }else if(type_leave == 6){
-                    text = 'ลาไปช่วยราชการ'
-                }else if(type_leave == 7){
-                    text = 'ลาศึกษาต่อ'
-                }else if(type_leave == 8){
-                    text = 'ลาลงเวรและออฟเวร'
-                }else if(type_leave == 9){
-                    text = 'ลาช่วยเหลือภรรยาคลอดบุตร'
-                }
+                // var text = '';
+                // if(type_leave == 1){
+                //     text = 'ลาป่วย'
+                // }else if(type_leave == 2){
+                //     text = 'ลากิจส่วนตัว'
+                // }else if(type_leave == 3){
+                //     text = 'ลาคลอดบุตร'
+                // }else if(type_leave == 4){
+                //     text = 'ลาพักผ่อน'
+                // }else if(type_leave == 6){
+                //     text = 'ลาไปช่วยราชการ'
+                // }else if(type_leave == 7){
+                //     text = 'ลาศึกษาต่อ'
+                // }else if(type_leave == 8){
+                //     text = 'ลาลงเวรและออฟเวร'
+                // }else if(type_leave == 9){
+                //     text = 'ลาช่วยเหลือภรรยาคลอดบุตร'
+                // }
                 $('#tital_rec').html('แบบฟอร์มบันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์'+ text);
             }
         });

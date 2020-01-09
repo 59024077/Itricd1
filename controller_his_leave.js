@@ -1,4 +1,3 @@
-
 $('#example1').DataTable({
 
     "scrollY": 700,
@@ -13,8 +12,8 @@ $('#example1').DataTable({
         "sInfoFiltered": "(จากเร็คคอร์ดทั้งหมด MAX เร็คคอร์ด)",
         "sSearch": " ค้นหา ",
         "oPaginate": {
-            "sPrevious": "ก่อนหน้า  ",
-            "sNext": "  ถัดไป"
+            "sPrevious": "ก่อนหน้า",
+            "sNext": "ถัดไป"
         }
     }
 });
