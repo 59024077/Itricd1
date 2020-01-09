@@ -1,0 +1,64 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">บันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+    <!-- content-header -->
+    <div class="card">
+        <div class="card-header text-center">
+            <br>
+            <h3 class="mb-3">บันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <div class="form-row">
+                <div class="col">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">วันที่ซื้ออุปกรณ์</span>
+                        </div>
+                        <input type="date" aria-label="First name" class="form-control" readonly>
+                        
+                      </div>
+                </div>
+                <div class="col">
+                    <div class="form-row">
+                        <div class="col-10">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="inputGroupSelect01">เลขครุภัณฑ์</label>
+                                </div>
+                                <input type="text" class="form-control" id="serial_number" name="serial_number">
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn btn-success" onclick="add_leave()" id="add_leave"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.content-header -->
+    <div id="hidden_data"></div>
+    <div id="hidden_record"></div>
+
+</section>
+<!-- /.content -->
+<!-- sweetalert2-->
