@@ -31,36 +31,36 @@ $(document).ready(function () {
 
     });
 
-    //---------- ดึงหน้า maintenance_records.html มาแสดง -------------------//
-    $("#maintenance_records").on("click", function (e) {
+    //---------- ดึงหน้า ma_records.html มาแสดง -------------------//
+    $("#ma_records").on("click", function (e) {
         e.stopImmediatePropagation();
 
         $('.contentServiceArea').html('');
 
         $.ajax({
-            url: "maintenance_records.html",
+            url: "ma_records.html",
             success: function (data) {
                 $("#content").html(data);
                 vals = 2;
-                txtVal = 'maintenance_records';
+                txtVal = 'ma_records';
 
             }
         });
 
     });
 
-    //---------- ดึงหน้า maintenance_history.html มาแสดง -------------------//
-    $("#maintenance_history").on("click", function (e) {
+    //---------- ดึงหน้า ma_history.html มาแสดง -------------------//
+    $("#ma_history").on("click", function (e) {
         e.stopImmediatePropagation();
 
         $('.contentServiceArea').html('');
 
         $.ajax({
-            url: "maintenance_history.html",
+            url: "ma_history.html",
             success: function (data) {
                 $("#content").html(data);
                 vals = 4;
-                txtVal = 'maintenance_history';
+                txtVal = 'ma_history';
                 show_hisleave();
 
             }
@@ -78,7 +78,7 @@ $(document).ready(function () {
             success: function (data) {
                 $("#content").html(data);
                 vals = 4;
-                txtVal = 'maintenance_history';
+                txtVal = 'ma_history';
                 show_hisleave();
 
             }
