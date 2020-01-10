@@ -11,7 +11,7 @@
             <div class="card card-info">
                 <div class="card-header" id="headingOne">
                     <h3 class="mb-0" style="color: #ffffff;">
-                        <i class="fas fa-car pr-10"> แบบฟอร์มบันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์</i>
+                        <i class="far fa-edit pr-10"> แบบฟอร์มบันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์</i>
                 </div>
                 <div class="accordion" id="accordlonExample">
                     <form id="mawin" onsubmit="save(); return false;">
@@ -102,8 +102,7 @@
                                     <div style="margin-bottom: 6px;">
                                         <div class="input-group-prepend mt-3">
                                             <span class="input-group-text">เลขครุภัณฑ์</span>
-                                            <input class="form-control" type="text" id="save_date"
-                                                name="save_date" required>
+                                            <input class="form-control" type="text" id="ma_serial_number" name="save_date" required>
                                         </div>
                                     </div>
                                 </div>
@@ -111,8 +110,7 @@
                                     <div style="margin-bottom: 6px;">
                                         <div class="input-group-prepend mt-3">
                                             <span class="input-group-text">ยี่ห้ออุปกรณ์</span>
-                                            <select class="form-control" type="text" id="uc_approval"
-                                                name="uc_approval">
+                                            <select class="form-control" type="text" id="ma_device_brand" name="ma_device_brand">
                                                 <option>x1</option>
                                                 <option>x2</option>
                                                 <option>x3</option>
@@ -125,8 +123,7 @@
                                     <div style="margin-bottom: 6px;">
                                         <div class="input-group-prepend mt-3">
                                             <span class="input-group-text">หน่วยงานที่รับผิดชอบ</span>
-                                            <input class="form-control" type="text" id="save_date"
-                                                name="save_date" required>
+                                            <input class="form-control" type="text" id="ma_responsible_department" name="ma_responsible_department" required>
                                         </div>
                                     </div>
                                 </div>
@@ -134,8 +131,7 @@
                                     <div style="margin-bottom: 6px;">
                                         <div class="input-group-prepend mt-3">
                                             <span class="input-group-text">วันที่ซื้ออุปกรณ์</span>
-                                            <input class="form-control" type="datetime-local" id="date_start"
-                                                name="date_start" required>
+                                            <input class="form-control" type="datetime-local" id="ma_date" name="ma_date" required>
                                         </div>
                                     </div>
                                 </div>
@@ -144,8 +140,7 @@
                                     <div style="margin-bottom: 6px;">
                                         <div class="input-group-prepend mt-3">
                                             <span class="input-group-text">ราคา</span>
-                                            <input class="form-control" type="text" id="save_date"
-                                                name="save_date" required>
+                                            <input class="form-control" type="text" id="ma_price" name="save_date" required>
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +149,7 @@
                                     <div style="margin-bottom: 6px;">
                                         <div class="input-group-prepend mt-3">
                                             <span class="input-group-text">ปีงบประมาณ</span>
-                                            <select class="form-control" type="text" id="ar_pass" name="ar_pass">
+                                            <select class="form-control" type="text" id="ma_fiscal_year" name="ma_fiscal_year">
                                                 <option>1996</option>
                                                 <option>2997</option>
                                                 <option>3998</option>

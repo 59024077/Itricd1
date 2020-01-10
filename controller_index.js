@@ -105,7 +105,7 @@ function add_leave() {
     if (type_leave != "5" && type_leave != "") {
         console.log(type_leave);
         $.ajax({
-            url: "record_leave.html",
+            url: "record_ma.html",
             success: function (data) {
                 $("#hidden_record").html(data);
                 // var text = '';
@@ -160,7 +160,7 @@ function add_usecar() {
 // fn show table record_usecar.html
 function show_hisleave() {
     $.ajax({
-        url: "table_leave.html",
+        url: "table_ma.html",
         success: function (data) {
             $("#hidden_record").html(data);
         }
