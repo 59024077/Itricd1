@@ -1,79 +1,95 @@
-<?php
-include("connect.php");
-include("function.php");
+  <?php 
+  include("connection.php");
+  include("function.php");
 
-// print_r($conn);
-$chk  = $_GET["en"];
-if( $chk == "insert_em"){
-  $em_user = $_POST["em_user"];
-  $em_pass = $_POST["em_pass"];
-  $em_id = $_POST["em_id"];
-  $em_intro = $_POST["em_intro"];
-  $em_fname = $_POST["em_fname"];
-  $em_lname = $_POST["em_lname"];
-  $em_nickname = $_POST["em_nickname"];
-  $em_gp = $_POST["em_gp"];
-  $em_depart = $_POST["em_depart"];
-  $em_level = $_POST["em_level"];
-  // $fileUpload = $_POST["fileUpload"];
-  $em_dayoff = $_POST["em_dayoff"];
-  add_em($em_user,$em_pass,$em_id,$em_intro,$em_fname,
-  $em_lname,$em_nickname,$em_gp,$em_depart,$em_level,$em_dayoff,$conn);
-}else if( $chk == "edit_em"){
-  $em_user = $_POST["em_user"];
-  $em_pass = $_POST["em_pass"];
-  $em_id = $_POST["em_id"];
-  $em_intro = $_POST["em_intro"];
-  $em_fname = $_POST["em_fname"];
-  $em_lname = $_POST["em_lname"];
-  $em_nickname = $_POST["em_nickname"];
-  $em_gp = $_POST["em_gp"];
-  $em_depart = $_POST["em_depart"];
-  $em_level = $_POST["em_level"];
-  $em_dayoff = $_POST["em_dayoff"];
-  update_em($em_user,$em_pass,$em_id,$em_intro,$em_fname,$em_lname,
-$em_nickname,$em_gp,$em_depart,$em_level,$em_dayoff,$conn);
-}else if($chk == "check_em"){
-  $em_id = $_POST["em_id"];
-  check_em($em_id,$conn);
-}else if($chk == "show_em"){
-  show_em($conn);
-}
+  $chk  = $_GET["en"];
+if( $chk == "insert_ma"){
+  $ma_date = $_POST["ma_date"];
+  $serial_number = $_POST["serial_number"];
+  $ma_equipment = $_POST["ma_equipment"];
+  $ma_device_brand = $_POST["ma_device_brand"];
+  $ma_responsible_department = $_POST["ma_responsible_department"];
+  $ma_price = $_POST["ma_price"];
+  $ma_fiscal_year = $_POST["ma_fiscal_year"];
 
-//FUNCTION Employee
+      insertdata($ma_date,$serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn);  
 
-function check_em($em_id,$conn){
-  $data = num_rows("employee","WHERE `em_id` = '$em_id'",$conn);
-  echo $data;
-}
+  }
 
-function add_em($em_user,$em_pass,$em_id,$em_intro,$em_fname,$em_lname,$em_nickname,$em_gp,$em_depart,$em_level,$em_dayoff,$conn){
-    $data = insert("`em_id`, `em_intro`, `em_fn`, `em_ln`, `em_nickname`, `em_departID`, `em_level`, `em_gbjob`, `em_dayoff`, `em_username`, `em_password`", 
-      "'$em_id', '$em_intro', '$em_fname', '$em_lname', '$em_nickname', '$em_depart', '$em_level', '$em_gp', '$em_dayoff', '$em_user', '$em_pass'","employee",$conn);
+  function insertdata($ma_date,$serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn){
+      $data = insert("ma_date,serial_number,ma_equipment,ma_device_brand,ma_responsible_department,ma_price,ma_fiscal_year",
+    "'$ma_date','$serial_number','$ma_equipment','$ma_device_brand','$ma_responsible_department','$ma_price','$ma_fiscal_year'",
+    "maintain",$conn);
     if($data){
-      echo 1;
+     echo 1;
     }else{
-      echo 2;
-    } 
+     echo 2; 
+    }
+  }
+else if($chk=="edit"){
+  $ma_date = $_POST["ma_date"];
+  $serial_number = $_POST["serial_number"];
+  $ma_equipment = $_POST["ma_equipment"];
+  $ma_device_brand = $_POST["ma_device_brand"];
+  $ma_responsible_department = $_POST["ma_responsible_department"];
+  $ma_price = $_POST["ma_price"];
+  $ma_fiscal_year = $_POST["ma_fiscal_year"];
+  
+      edit($ma_date,$serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn);
 }
 
-function update_em($em_user,$em_pass,$em_id,$em_intro,$em_fname,$em_lname,$em_nickname,$em_gp,$em_depart,$em_level,$em_dayoff,$conn){
-  $data = update("employee","`em_intro`='$em_intro',`em_fn`='$em_fname',`em_ln`='$em_lname',`em_nickname`='$em_nickname',
-  `em_departID`='$em_depart',`em_level`='$em_level',`em_gbjob`='$em_gp',`em_dayoff`='$em_dayoff',`em_username`='$em_user',
-  `em_password`='$em_pass'","WHERE `em_id` = '$em_id' ",$conn);
-  if($data){
+function edit($ma_date,$serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn);
+
+{
+
+  $data = update("maintain",
+                "ma_date = '$ma_date',ma_equipment ='$ma_equipment',ma_device_brand = '$ma_device_brand',
+                ma_responsible_department = '$ma_responsible_department',ma_price = '$ma_price',ma_fiscal_year = '$ma_fiscal_year'",
+                "WHERE serial_number = '$serial_number'",$conn);
+                
+  if ($data) {
     echo 1;
-  }else{
+  } else {
     echo 2;
   }
 }
+  function checknum($serial_number,$conn){
+    $data = num_rows("maintain","WHERE serial_number = '$serial_number'",$conn);
+    echo $data;
+  } 
 
-function show_em($conn){
-  $data = selects("employee","",$conn);
-  // return $data;
-  if($data){
-    echo json_encode($data);
-  }else{
-    echo 0;
+  else if($chk=="check"){
+    $serial_number = $_POST["serial_number"];
+    checknum($serial_number,$conn);
+   }
+
+   function showinforp($serial_number,$conn){
+    $data = select("maintain", "WHERE serial_number =  '$serial_number'", $conn);
+    if ($data) {
+      echo json_encode($data);
+    } else {
+      echo 0;
+    }
   }
-}
+
+  function showinfor($serial_number,$service_date,$conn){
+    $data = select("visitjhos", "WHERE 	visitdate  LIKE '%$service_date%' AND prescriptionno = '$serial_number'", $conn);
+    // echo $data;
+    if($data){
+      echo json_encode($data);
+    }else{
+      echo 0;
+    }
+  }
+  }else if($chk == "showinfor"){
+    $serial_number = $_POST["serial_number"];
+    $service_date = $_POST["service_date"];
+    showinfor($serial_number,$service_date,$conn);
+
+  }else if($chk == "showdata1"){
+  $serial_number = $_POST["serial_number"];
+  showinforp($serial_number,$conn);
+  }
+
+
+?>
