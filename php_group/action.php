@@ -84,11 +84,11 @@ function edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_resp
   }else if($chk == "showinfor"){
     $serial_number = $_POST["ma_serial_number"];
     $service_date = $_POST["service_date"];
-    showinfor($serial_number,$service_date,$conn);
+    showinfor($ma_serial_number,$service_date,$conn);
 
-  }else if($chk == "showdata1"){
-  $serial_number = $_POST["serial_number"];
-  showinforp($serial_number,$conn);
+  }else if($chk == "showdata"){
+  $ma_serial_number = $_POST["ma_serial_number"];
+  showinforp($ma_serial_number,$conn);
   }
 
 
