@@ -8,8 +8,6 @@ function saveand() {
     var ma_responsible_department = $("#ma_responsible_department").val();
     var ma_price = $("#ma_price").val();
     var ma_fiscal_year = $("#ma_fiscal_year").val();
-     
-   var maintain = $("#maintain").serializeJSON();
 
    $.ajax({
     async: true,
