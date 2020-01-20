@@ -176,11 +176,11 @@ function add_ma() {
     });
 
 // fn show record_usecar.html
-function add_usecar() {
+function saveand() {
         $.ajax({
-            url: "record_usecar.html",
+            url: "record_ma.html",
             success: function (data) {
-                $("#hidden_record").html(data);
+                $("#ma_record").html(data);
             }
         });
 }

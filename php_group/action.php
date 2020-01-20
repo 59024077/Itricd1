@@ -14,9 +14,14 @@ if( $chk == "insert_ma"){
 
       insertdata($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn);  
 
+  } else if ($chk == "showdata") {
+    $ma_serial_number=$_POST["ma_serial_number"];
+    showdata($ma_serial_number,$conn);
+    
   }
 
-  function insertdata($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn){
+  function insertdata($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn)
+  {
       $data = insert("ma_date,ma_serial_number,ma_equipment,ma_device_brand,ma_responsible_department,ma_price,ma_fiscal_year",
     "'$ma_date','$ma_serial_number','$ma_equipment','$ma_device_brand','$ma_responsible_department','$ma_price','$ma_fiscal_year'",
     "maintain",$conn);
@@ -26,7 +31,9 @@ if( $chk == "insert_ma"){
      echo 2; 
     }
   }
-else if($chk=="edit"){
+  function showdata($ma_serial_number,$conn)
+
+else if($chk == "edit"){
   $ma_date = $_POST["ma_date"];
   $ma_serial_number = $_POST["ma_serial_number"];
   $ma_equipment = $_POST["ma_equipment"];
@@ -36,9 +43,17 @@ else if($chk=="edit"){
   $ma_fiscal_year = $_POST["ma_fiscal_year"];
   
       edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn);
+}else if($chk == "showinfor"){
+  $serial_number = $_POST["ma_serial_number"];
+  $service_date = $_POST["service_date"];
+  showinfor($ma_serial_number,$service_date,$conn);
+
+}else if($chk == "check"){
+$ma_serial_number = $_POST["ma_serial_number"];
+showinfor($ma_serial_number,$conn);
 }
 
-function edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn);
+
 
 {
 
@@ -55,15 +70,16 @@ function edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_resp
 }
   function checknum($ma_serial_number,$conn){
     $data = num_rows("maintain","WHERE ma_serial_number = '$ma_serial_number'",$conn);
-    echo $data;
-  } 
+    //echo $data;
+  
 
-  else if($chk=="check"){
+  if($chk=="check"){
     $ma_serial_number = $_POST["ma_serial_number"];
     checknum($ma_serial_number,$conn);
    }
+  }
 
-   function showinforp($ma_serial_number,$conn){
+   function showinfor($ma_serial_number,$conn){
     $data = select("maintain", "WHERE ma_serial_number =  '$ma_serial_number'", $conn);
     if ($data) {
       echo json_encode($data);
@@ -72,6 +88,8 @@ function edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_resp
     }
   }
 
+  function edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_fiscal_year,$conn);
+
   function showinfor($ma_serial_number,$service_date,$conn){
     $data = select("visitjhos", "WHERE 	visitdate  LIKE '%$service_date%' AND prescriptionno = '$ma_serial_number'", $conn);
     // echo $data;
@@ -79,17 +97,8 @@ function edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_resp
       echo json_encode($data);
     }else{
       echo 0;
+
     }
   }
-  }else if($chk == "showinfor"){
-    $serial_number = $_POST["ma_serial_number"];
-    $service_date = $_POST["service_date"];
-    showinfor($ma_serial_number,$service_date,$conn);
-
-  }else if($chk == "showdata"){
-  $ma_serial_number = $_POST["ma_serial_number"];
-  showinforp($ma_serial_number,$conn);
-  }
-
 
 ?>

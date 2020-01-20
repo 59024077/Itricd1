@@ -21,7 +21,7 @@ function saveand() {
         if(data == 0){
             $.ajax({
                 async: true,
-                url: "php_group/action.php?en=insert1",
+                url: "php_group/action.php?en=insert",
                 type: "POST",
                 data: {
                     ma_date: ma_date,
