@@ -7,7 +7,7 @@ function saveand() {
     var ma_device_brand = $("#ma_device_brand").val();
     var ma_responsible_department = $("#ma_responsible_department").val();
     var ma_price = $("#ma_price").val();
-    var ma_fiscal_year = $("#ma_fiscal_year").val();
+    var ma_date_year = $("#ma_date_year").val();
 
    $.ajax({
     async: true,
@@ -30,10 +30,12 @@ function saveand() {
                     ma_device_brand: ma_device_brand,
                     ma_responsible_department: ma_responsible_department,
                     ma_price: ma_price,
-                    ma_fiscal_year: ma_fiscal_year
+                    ma_date_year: ma_date_year
                 
                 },
                 success: function (data) {
+                    console.log("เช็ค");
+                    
                     console.log(data);
                     if (data == 1) {
                         Swal.fire({
@@ -68,7 +70,7 @@ function saveand() {
                     ma_device_brand: ma_device_brand,
                     ma_responsible_department: ma_responsible_department,
                     ma_price: ma_price,
-                    ma_fiscal_year: ma_fiscal_year
+                    ma_date_year: ma_date_year
         
                 },
                 success: function (data) {

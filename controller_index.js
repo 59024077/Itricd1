@@ -167,13 +167,7 @@ function add_ma() {
 
 //////////////////////////////////////////////////////////////////
     //Date picker
-    $('#ma_date').daterangepicker({
-        singleDatePicker: true,
-        showDropdowns: true,
-        locale: {
-            format: 'DD/MM/YYYY'
-        }
-    });
+
 
 // fn show record_usecar.html
 function saveand() {
