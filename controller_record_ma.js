@@ -34,7 +34,7 @@ function saveand() {
                 
                 },
                 success: function (data) {
-                    console.log("เช็ค");
+                    
                     
                     console.log(data);
                     if (data == 1) {
@@ -45,6 +45,7 @@ function saveand() {
                             timer: 1500
                         })
                         clearsessionStorage();
+                        console.log("เช็ค");
                         console.log("บันทึกมูลสำเร็จ");
         
                     } else {

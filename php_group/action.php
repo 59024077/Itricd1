@@ -1,4 +1,5 @@
 <?php
+include("connect.php");
 include("function.php");
 
 $chk  = $_GET["en"];
@@ -11,7 +12,7 @@ if( $chk == "insert"){
   $ma_price = $_POST["ma_price"];
   $ma_date_year = $_POST["ma_date_year"];
 
-      insert($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_date_year,$conn);
+  insertdata($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_date_year,$conn);
 
     }else if ($chk == "showdata") {
         $ma_serial_number=$_POST["ma_serial_number"];
