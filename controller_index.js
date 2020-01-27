@@ -61,7 +61,7 @@ $(document).ready(function () {
                 $("#content").html(data);
                 vals = 4;
                 txtVal = 'ma_history';
-                show_hisleave();
+                ma_history();
 
             }
         });
