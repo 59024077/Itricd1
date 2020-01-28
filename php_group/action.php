@@ -70,11 +70,11 @@ if( $chk == "insert"){
       }
 function showinfor($ma_serial_number,$service_date,$conn){
     $data = select("visitjhos", "WHERE 	visitdate  LIKE '%$service_date%' AND prescriptionno = '$ma_serial_number'", $conn);
-     echo $data;
-    // if($data){
-    //   echo json_encode($data);
-    // }else{
-    //   echo 0;
-    // }
+    //echo $data;
+    if($data){
+      echo json_encode($data);
+    }else{
+      echo 0;
+    }
   }
 ?>
