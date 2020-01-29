@@ -87,4 +87,7 @@ function showinfor($ma_serial_number,$service_date,$conn){
       echo 0;
     }
   }
+  
+  //ดึงข้อมูล equipment
+
 ?>
