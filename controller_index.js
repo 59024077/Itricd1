@@ -149,7 +149,7 @@ function add_ma() {
             url: "record_ma.html",
             success: function (data) {
                 $("#hidden_record").html(data);
-                showzero();
+               showall();
                 
             }
             

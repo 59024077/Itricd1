@@ -19,6 +19,7 @@
     // return $sql; die;
     $result = $conn->query($sql);
     return $result;
+    //return $sql;
     }
     //เลือกข้อมูล
     function select($table,$condition,$conn){

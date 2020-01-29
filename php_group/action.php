@@ -30,7 +30,7 @@ if( $chk == "insert"){
             edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_date_year,$conn);
       }else if($chk == "check"){
         $ma_serial_number = $_POST["ma_serial_number"];
-        //checknum($ma_serial_number,$conn);
+        checknum($ma_serial_number,$conn);
         
         }else if($chk == "showinfor"){
         $serial_number = $_POST["ma_serial_number"];
@@ -71,6 +71,16 @@ if( $chk == "insert"){
 function showinfor($ma_serial_number,$service_date,$conn){
     $data = select("visitjhos", "WHERE 	visitdate  LIKE '%$service_date%' AND prescriptionno = '$ma_serial_number'", $conn);
     //echo $data;
+    if($data){
+      echo json_encode($data);
+    }else{
+      echo 0;
+    }
+  }
+
+  function showdata($ma_serial_number, $conn){
+    $data = select("maintain", "WHERE ma_serial_number = '$ma_serial_number'", $conn);
+    // echo $data;
     if($data){
       echo json_encode($data);
     }else{

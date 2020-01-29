@@ -50,7 +50,7 @@ function saveand() {
         
                     } else {
                         Swal.fire({
-                            icon: 'error',
+                            type: 'error',
                             title: 'บันทึกมูลไม่สำเร็จ',
                             showConfirmButton: false,
                             timer: 1500
@@ -100,7 +100,39 @@ function saveand() {
         }
     }
 });
+}
+function showall() {
+    var ma_serial_number = $("#ma_serial_number").val();
+    $.ajax({
+        async: true,
+        url: "php_group/action.php?en=showdata",
+        type: "POST",
+        data: { ma_serial_number: ma_serial_number
 
+        },
+        success: function (data) {
+            if (data != 0) {
+                var dataJSON = JSON.parse(data);
+                console.log(dataJSON);
+            $("#ma_date").val(dataJSON.ma_date);
+            $("#ma_serial_number").val(dataJSON.ma_serial_number);
+            $("#ma_equipment").val(dataJSON.ma_equipment);
+            $("#ma_device_brand").val(dataJSON.ma_device_brand);
+            $("#ma_responsible_department").val(dataJSON.ma_responsible_department);
+            $("#ma_price").val(dataJSON.ma_price);
+            $("#ma_date_year").val(dataJSON.ma_date_year);
 
+            // //ให้แสดงข้อมูล fa_yourself ของ radio
+            // if (dataJSON.fa_yourself == 1) {
+            //     $('#fa_have1').prop("checked", true);
 
+            // } else if (dataJSON.fa_yourself == 2) {
+            //     $('#fa_none1').prop("checked", true);
+            // }
+            
+            }
+        }
+        
+
+    });
 }
