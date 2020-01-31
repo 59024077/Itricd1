@@ -65,8 +65,42 @@ $(document).ready(function () {
 
             }
         });
-
     });
+    //---------- ดึงหน้า ma_ai_durable_articles.html มาแสดง -------------------//
+    $("#ma_ai_durable_articles").on("click", function (e) {
+        e.stopImmediatePropagation();
+
+        $('.contentServiceArea').html('');
+
+        $.ajax({
+            url: "ma_ai_durable_articles.html",
+            success: function (data) {
+                $("#content").html(data);
+                vals = 5;
+                txtVal = 'ma_ai_durable_articles';
+                ma_ai_durable_articles();
+
+            }
+        });
+    });
+    //---------- ดึงหน้า ma_ai_equipment.html มาแสดง -------------------//
+    $("#ma_ai_equipment").on("click", function (e) {
+        e.stopImmediatePropagation();
+
+        $('.contentServiceArea').html('');
+
+        $.ajax({
+            url: "ma_ai_equipment.html",
+            success: function (data) {
+                $("#content").html(data);
+                vals = 7;
+                txtVal = 'ma_ai_equipment';
+                ma_ai_equipment();
+
+            }
+        });
+    });
+
 });
 
 //go page index
