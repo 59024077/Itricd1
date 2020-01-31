@@ -50,7 +50,7 @@ if( $chk == "insert"){
         }else{
          echo 2; 
         }
-      }  
+      }
       function edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_date_year,$conn)
       {
         $data = update("maintain",
@@ -88,6 +88,27 @@ function showinfor($ma_serial_number,$service_date,$conn){
     }
   }
   
-  //ดึงข้อมูล equipment
+  //บันทึกข้อมูล เพิ่มข้อมูลยี่ห้ออุปกรณ์
+  $chk  = $_GET["en"];
+  if( $chk == "insertMA"){
+    $ma_equipment = $_POST["ma_equipment"];
+  
+    insertMAdata($ma_equipment);
+  
+      }function insertMAdata($ma_equipment)
+     
+      {
+        $data = insertMA("ma_equipment",
+       "'$ma_equipment'",
+       "device_brand");
+       if($data){
+        echo 1;
+       }else{
+        echo 2; 
+       }
+     }function checksnum($ma_equipment){
+      $data = num_rows("device_brand","WHERE ma_equipment = '$ma_equipment'");
+      echo $data;
+    }
 
 ?>

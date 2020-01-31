@@ -1,6 +1,7 @@
 // การ save ข้อมูล
-function ma_durable_articles() {
+function ma_durable_articless() {
 
+    var ma_durable_articles = $("#ma_durable_articles").val();
     var ai_durable_articles = $("#ai_durable_articles").val();
 
    $.ajax({
@@ -8,7 +9,7 @@ function ma_durable_articles() {
     url: "php_group/action.php?en=check",
     type: "POST",
     data: {
-        id_equipment: id_equipment
+        ai_durable_articles: ai_durable_articles
     },
     success: function (data) {
         console.log(data);
@@ -18,6 +19,7 @@ function ma_durable_articles() {
                 url: "php_group/action.php?en=insertAI",
                 type: "POST",
                 data: {
+                    ma_durable_articles: ma_durable_articles,
                     ai_durable_articles: ai_durable_articles,
                 
                 },
@@ -46,4 +48,24 @@ function ma_durable_articles() {
         }
     }
 });
+}
+function ma_durable_articless() {
+    var ma_durable_articles = $('#ma_durable_articles').val();
+    console.log(ma_durable_articles);
+    if (ma_durable_articles != "") {
+        console.log(ma_durable_articles);
+        Swal.fire({
+            type: 'success',
+            title: 'บันทึกมูลสำเร็จ',
+            text: "ทำการเพิ่มข้อมูลยี่ห้ออุปกรณ์สำเร็จ"
+        })
+        
+        
+    }else if(ma_durable_articles == ""){
+        swal.fire({
+            type: "error",
+            title: 'ผิดพลาด',
+            text: "กุณากรอกข้อมูลชนิดครุภัณฑ์"
+        });
+    }
 }

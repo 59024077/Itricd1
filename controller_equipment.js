@@ -1,16 +1,16 @@
 // การ เพิ่มข้อมูล ข้อมูล
-function ma_equipment() {
+function ma_equipments() {
 
+    var ma_equipment = $("#ma_equipment").val();
     var ai_equipment = $("#ai_equipment").val();
-    console.log(เช็ค);
     
 
    $.ajax({
     async: true,
-    url: "php_group/action.php?en=check",
+    url: "php_group/action.php?en=checks",
     type: "POST",
     data: {
-        id_equipment: id_equipment
+        ai_equipment: ai_equipment
     },
     success: function (data) {
         console.log(data);
@@ -20,6 +20,7 @@ function ma_equipment() {
                 url: "php_group/action.php?en=insertMA",
                 type: "POST",
                 data: {
+                    ma_equipment: ma_equipment,
                     ai_equipment: ai_equipment,
                 
                 },
@@ -29,7 +30,7 @@ function ma_equipment() {
                     if (data == 1) {
                         Swal.fire({
                             type: 'success',
-                            title: 'เพิ่มข้อมูลสำเร็จ',
+                            title: 'ทำการเพิ่มข้อมูลยี่ห้ออุปกรณ์สำเร็จ',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -38,7 +39,7 @@ function ma_equipment() {
                     } else {
                         Swal.fire({
                             type: 'error',
-                            title: 'เพิ่มข้อมูลไม่สำเร็จ',
+                            title: 'กุณากรอกข้อมูลยี่ห้ออุปกรณ์',
                             showConfirmButton: false,
                             timer: 1500
                         })
