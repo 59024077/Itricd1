@@ -1,4 +1,4 @@
-// การ save ข้อมูล
+// การ เพิ่มข้อมูลชนิดครุภัณฑ์ ข้อมูล
 function ma_durable_articless() {
 
     var ma_durable_articles = $("#ma_durable_articles").val();

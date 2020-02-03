@@ -94,9 +94,8 @@ function showinfor($ma_serial_number,$service_date,$conn){
     $ma_equipment = $_POST["ma_equipment"];
   
     insertMAdata($ma_equipment);
-  
-      }function insertMAdata($ma_equipment)
-     
+      }
+      function insertMAdata($ma_equipment)
       {
         $data = insertMA("ma_equipment",
        "'$ma_equipment'",

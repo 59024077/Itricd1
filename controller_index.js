@@ -78,7 +78,7 @@ $(document).ready(function () {
                 $("#content").html(data);
                 vals = 5;
                 txtVal = 'ma_ai_durable_articles';
-                ma_ai_durable_articles();
+                
 
             }
         });
@@ -95,7 +95,7 @@ $(document).ready(function () {
                 $("#content").html(data);
                 vals = 7;
                 txtVal = 'ma_ai_equipment';
-                ma_ai_equipment();
+                
 
             }
         });

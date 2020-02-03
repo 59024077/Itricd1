@@ -1,8 +1,8 @@
-// การ เพิ่มข้อมูล ข้อมูล
+// การ เพิ่มข้อมูลยี่ห้ออุปกรณ์ ข้อมูล
 function ma_equipments() {
 
     var ma_equipment = $("#ma_equipment").val();
-    var ai_equipment = $("#ai_equipment").val();
+    
     
 
    $.ajax({
@@ -10,7 +10,7 @@ function ma_equipments() {
     url: "php_group/action.php?en=checks",
     type: "POST",
     data: {
-        ai_equipment: ai_equipment
+        ma_equipment: ma_equipment
     },
     success: function (data) {
         console.log(data);
@@ -21,7 +21,7 @@ function ma_equipments() {
                 type: "POST",
                 data: {
                     ma_equipment: ma_equipment,
-                    ai_equipment: ai_equipment,
+                   
                 
                 },
                 success: function (data) {
