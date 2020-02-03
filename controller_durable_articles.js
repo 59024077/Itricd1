@@ -2,25 +2,23 @@
 function ma_durable_articless() {
 
     var ma_durable_articles = $("#ma_durable_articles").val();
-    var ai_durable_articles = $("#ai_durable_articles").val();
 
    $.ajax({
     async: true,
-    url: "php_group/action.php?en=check",
+    url: "php_group/action.php?en=checkss",
     type: "POST",
     data: {
-        ai_durable_articles: ai_durable_articles
+        ma_durable_articles: ma_durable_articles
     },
     success: function (data) {
         console.log(data);
         if(data == 0){
             $.ajax({
                 async: true,
-                url: "php_group/action.php?en=insertAI",
+                url: "php_group/action.php?en=insertMI",
                 type: "POST",
                 data: {
                     ma_durable_articles: ma_durable_articles,
-                    ai_durable_articles: ai_durable_articles,
                 
                 },
                 success: function (data) {
