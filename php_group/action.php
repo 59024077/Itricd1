@@ -38,8 +38,6 @@ if( $chk == "insert"){
         showinfor($ma_serial_number,$service_date,$conn);
       }
       
-
-
       function insertdata($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_date_year,$conn)
        {
         $data = insert("ma_date,ma_serial_number,ma_equipment,ma_device_brand,ma_responsible_department,ma_price,ma_date_year",
@@ -93,20 +91,20 @@ function showinfor($ma_serial_number,$service_date,$conn){
   if( $chk == "insertMA"){
     $ma_equipment = $_POST["ma_equipment"];
   
-    insertMAdata($ma_equipment);
+    insertMAdata($ma_equipment,$conn);
       }
-      function insertMAdata($ma_equipment)
+      function insertMAdata($ma_equipment,$conn)
       {
-        $data = insertMA("ma_equipment",
+        $data = insert("ma_equipment", 
        "'$ma_equipment'",
-       "device_brand");
+       "equipment",$conn);
        if($data){
         echo 1;
        }else{
         echo 2; 
        }
-     }function checksnum($ma_equipment){
-      $data = num_rows("device_brand","WHERE ma_equipment = '$ma_equipment'");
+     }function checksnum($ma_equipment,$conn){
+      $data = num_rows("equipment","WHERE ma_equipment = '$ma_equipment'");
       echo $data;
     }
 
