@@ -108,4 +108,26 @@ function showinfor($ma_serial_number,$service_date,$conn){
       echo $data;
     }
 
+    //บันทึกข้อมูล เพิ่มข้อมูลชนิดครุภัณฑ์
+  $chk  = $_GET["en"];
+  if( $chk == "insertMI"){
+    $ma_durable_articles = $_POST["ma_durable_articles"];
+  
+    insertMIdata($ma_durable_articles,$conn);
+      }
+      function insertMIdata($ma_durable_articles,$conn)
+      {
+        $data = insert("ma_durable_articles", 
+       "'$ma_durable_articles'",
+       "durable_articles",$conn);
+       if($data){
+        echo 1;
+       }else{
+        echo 2; 
+       }
+     }function checkssnum($ma_durable_articles,$conn){
+      $data = num_rows("durable_articles","WHERE ma_durable_articles = '$ma_durable_articles'");
+      echo $data;
+    }
+
 ?>

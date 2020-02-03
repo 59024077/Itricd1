@@ -2,8 +2,6 @@
 function ma_equipments() {
 
     var ma_equipment = $("#ma_equipment").val();
-    
-    
 
    $.ajax({
     async: true,

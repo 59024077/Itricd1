@@ -47,23 +47,3 @@ function ma_durable_articless() {
     }
 });
 }
-function ma_durable_articless() {
-    var ma_durable_articles = $('#ma_durable_articles').val();
-    console.log(ma_durable_articles);
-    if (ma_durable_articles != "") {
-        console.log(ma_durable_articles);
-        Swal.fire({
-            type: 'success',
-            title: 'บันทึกมูลสำเร็จ',
-            text: "ทำการเพิ่มข้อมูลยี่ห้ออุปกรณ์สำเร็จ"
-        })
-        
-        
-    }else if(ma_durable_articles == ""){
-        swal.fire({
-            type: "error",
-            title: 'ผิดพลาด',
-            text: "กุณากรอกข้อมูลชนิดครุภัณฑ์"
-        });
-    }
-}
