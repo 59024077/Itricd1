@@ -119,14 +119,14 @@ function showinfor($ma_serial_number,$service_date,$conn){
       {
         $data = insert("ma_durable_articles", 
        "'$ma_durable_articles'",
-       "durable_articles",$conn);
+       "device_brand",$conn);
        if($data){
         echo 1;
        }else{
         echo 2; 
        }
      }function checkssnum($ma_durable_articles,$conn){
-      $data = num_rows("durable_articles","WHERE ma_durable_articles = '$ma_durable_articles'");
+      $data = num_rows("device_brand","WHERE ma_durable_articles = '$ma_durable_articles'");
       echo $data;
     }
 

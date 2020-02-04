@@ -88,7 +88,7 @@ function login()
 					sessionStorage.setItem("showname",'คุณ'+response[i].fname);
 					sessionStorage.setItem("fullname",'คุณ'+response[i].fname+' '+response[i].lname);
 					//var urlLogin = '/index.html';
-					var urlLogin = '/index.html';
+					var urlLogin = '/Screenning/index.html';
 					window.location = urlLogin;
 					console.log('ถูกต้อง'); 
 				} else {
