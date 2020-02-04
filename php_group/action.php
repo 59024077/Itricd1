@@ -130,4 +130,23 @@ function showinfor($ma_serial_number,$service_date,$conn){
       echo $data;
     }
 
+
+
+
+    // if( $chk == "getdata"){
+    
+    //   getdatadata();
+    //     }
+    //     function getdatadata()
+    //     {
+    //       $data = selects("device_brand", 
+    //       "",
+    //       $conn);
+    //      if($data){
+    //       echo json_encode($data);
+    //      }else{
+    //       echo 2; 
+    //      }
+    //    }
+  
 ?>

@@ -184,12 +184,10 @@ function add_ma() {
             success: function (data) {
                 $("#hidden_record").html(data);
                showall();
+            // getdatadata();
                 
-            }
-            
+            }    
         });
-        
-        
     }else if(ma_serial_number == ""){
         swal.fire({
             type: "error",

@@ -31,16 +31,15 @@
     }
     //เลือกหลายแถว
     function selects($table,$condition,$conn){
-    $sql = "select * from $table $condition";
-    $dbquery = $conn->query($sql);
-    $rows = array();
-    while (($result = $dbquery->fetch_array()) !== FALSE){
-        $rows[] = $result;
-        return $rows;
-    }
-        
-               
-    }
+        $sql = "select * from $table $condition";
+        $dbquery = $conn->query($sql);
+        $rows = array();
+        while ($result = mysqli_fetch_array($dbquery)){
+            $rows[] = $result;
+            
+        } 
+        return $rows;               
+        }
     //สุ่มเลือกข้อมูล
     function selectrand($table,$condition,$conn){
         $sql = "select * from $table $condition";
