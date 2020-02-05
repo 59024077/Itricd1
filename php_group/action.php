@@ -130,6 +130,20 @@ function showinfor($ma_serial_number,$service_date,$conn){
       echo $data;
     }
 
+/////login
+    function showlogindata($username,$password, $conn){
+      $data = select("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
+      // echo $data;
+      if($data){
+        echo json_encode($data);
+      }else{
+        echo 0;
+      }
+    }
+    function checkloginnum($username,$password,$conn){
+      $data = num_rows("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
+      echo $data;
+    }
 
 
 

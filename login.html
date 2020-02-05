@@ -18,13 +18,13 @@
 
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="text" name="username" id="username" placeholder="Username">
 						<span class="focus-input100"></span>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" id="password" placeholder="Password">
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -43,8 +43,8 @@
 						</div>
 					</div> -->
 
-					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
+					<div class="login100-form-btn m-t-17">
+						<button type="button" class="login100-form-btn" onclick="lo_log()" id="lo_login">
 							Login
 						</button>
 					</div>
@@ -55,4 +55,5 @@
 	</div>
 
 </body>
+<script src="controller_login.js"></script>
 </html>
