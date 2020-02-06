@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
 
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="plugins/sweetalert2/sweetalert2.min.css">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -12,18 +12,19 @@
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-50 p-b-90">
 				<form class="login100-form validate-form flex-sb flex-w">
+				<!-- <form id="saveand" onsubmit="lo_log(); return false;"> -->
 					<span class="login100-form-title p-b-51">
 						Login
 					</span>
 
 					
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
+					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="text" name="username" id="username" placeholder="Username">
 						<span class="focus-input100"></span>
 					</div>
 					
 					
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input m-b-16">
 						<input class="input100" type="password" name="password" id="password" placeholder="Password">
 						<span class="focus-input100"></span>
 					</div>
@@ -44,16 +45,28 @@
 					</div> -->
 
 					<div class="login100-form-btn m-t-17">
-						<button type="button" class="login100-form-btn" onclick="lo_log()" id="lo_login">
+						<button type="button" class="login100-form-btn" onclick="lo_log()">
 							Login
 						</button>
 					</div>
 
+					<!-- <div class="login100-form-btn m-t-17">
+						<div class="form-row text-center pb-3">
+							<div class="col-12">
+								<button type="submit" class="login100-form-btn">Login</btton>
+							</div>
+						</div>
+					</div> -->
+
 				</form>
+				
 			</div>
 		</div>
 	</div>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <script src="controller_login.js"></script>
+
 </html>
