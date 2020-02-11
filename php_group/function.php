@@ -58,6 +58,7 @@
     #หากจะใช้ function selects ให้ใช้ foreach เอาข้อมูลออกมา
     function num_rows($table,$condition,$conn){
     $sql = "select * from $table $condition";
+    // return $sql ; die;
     $dbquery = $conn->query($sql);
     $num_rows = $dbquery->num_rows;
     return $num_rows;

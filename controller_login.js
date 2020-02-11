@@ -1,6 +1,6 @@
 function lo_log() {
-    var username = $("#username").val();
-    var password = $("#password").val();
+    var username = $('#username').val();
+    var password = $('#password').val();
     
     console.log(username);
     console.log(password);
@@ -13,25 +13,26 @@ function lo_log() {
             password: password
         },
         success: function (data) {
-            if (data == 1) {
-                Swal.fire({
-                    type: 'success',
-                    title: 'แก้ไขข้อมูลสำเร็จ',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                clearsessionStorage();
-                console.log("แก้ไขข้อมูลสำเร็จ");
+            console.log(data);
+            // if (data == 1) {
+            //     Swal.fire({
+            //         type: 'success',
+            //         title: 'แก้ไขข้อมูลสำเร็จ',
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //     })
+            //     clearsessionStorage();
+            //     console.log("แก้ไขข้อมูลสำเร็จ");
                 
-            } else {
+            // } else {
 
-                Swal.fire({
-                    type: 'error',
-                    title: 'กรุณากรอกรหัสผ่าน',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
+            //     Swal.fire({
+            //         type: 'error',
+            //         title: 'กรุณากรอกรหัสผ่าน',
+            //         showConfirmButton: false,
+            //         timer: 1500
+            //     })
+            // }
 
         }
     });

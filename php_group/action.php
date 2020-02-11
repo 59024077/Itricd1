@@ -131,15 +131,27 @@ function showinfor($ma_serial_number,$service_date,$conn){
     }
 
 /////login
+$chk  = $_GET["en"];
+if($chk == "checklogin"){
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  showlogindata($username,$password, $conn);
+}
     function showlogindata($username,$password, $conn){
-      $data = select("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
+      $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
+      echo $data;
+      // $data = select("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
       // echo $data;
-      if($data){
-        echo json_encode($data);
-      }else{
-        echo 0;
-      }
+      // if($data){
+      //   echo json_encode($data);
+      // }else{
+      //   echo 0;
+      // }else if($chk == "checklogin"){
+      //   $ma_serial_number = $_POST["ma_serial_number"];
+      //   checknum($ma_serial_number,$conn);
+      // }
     }
+
     function checkloginnum($username,$password,$conn){
       $data = num_rows("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
       echo $data;
