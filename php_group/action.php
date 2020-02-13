@@ -138,18 +138,19 @@ if($chk == "checklogin"){
   showlogindata($username,$password, $conn);
 }
     function showlogindata($username,$password, $conn){
-      $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
-      echo $data;
-      // $data = select("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
+      // $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
       // echo $data;
-      // if($data){
-      //   echo json_encode($data);
-      // }else{
-      //   echo 0;
-      // }else if($chk == "checklogin"){
-      //   $ma_serial_number = $_POST["ma_serial_number"];
-      //   checknum($ma_serial_number,$conn);
-      // }
+      $data = num_rows("ma_login", "WHERE username = '$username'"AND"WHERE password = '$password'", $conn);
+      echo $data;
+      if($data){
+        echo json_encode($data);
+      }else if{
+        echo 0;
+      }else if($chk == "checklogin"){
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        checknum($username,$password,$conn);
+      }
     }
 
     function checkloginnum($username,$password,$conn){

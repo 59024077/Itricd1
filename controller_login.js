@@ -14,25 +14,23 @@ function lo_log() {
         },
         success: function (data) {
             console.log(data);
-            // if (data == 1) {
-            //     Swal.fire({
-            //         type: 'success',
-            //         title: 'แก้ไขข้อมูลสำเร็จ',
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //     })
-            //     clearsessionStorage();
-            //     console.log("แก้ไขข้อมูลสำเร็จ");
-                
-            // } else {
+            if (data == 1) {
+                Swal.fire({
+                    type: 'success',
+                    title: 'OK',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
 
-            //     Swal.fire({
-            //         type: 'error',
-            //         title: 'กรุณากรอกรหัสผ่าน',
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //     })
-            // }
+            } else {
+
+                Swal.fire({
+                    type: 'error',
+                    title: 'error',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            }
 
         }
     });
