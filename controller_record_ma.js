@@ -139,8 +139,6 @@ function showall() {
 }
 
 
-
-
 // $('#ma_equipmentx').select2({
 //     ajax: {
 //       url: 'php_group/action.php?en=getdata',
@@ -154,5 +152,40 @@ function showall() {
 //     }
 //   });
 
+function ma_equipmentx(){
 
+  let dropdown = $('#ma_equipmentx');
+
+  dropdown.empty();
+
+  dropdown.append('<option selected>โปรดเลือกแผนก</option>');
+  dropdown.prop('selectedIndex', 0);
+
+  const url = "php_group/action.php?en=ma_equipmentx";
+
+  // Populate dropdown with list of provinces
+  $.getJSON(url, function (data) {
+      $.each(data, function (key, entry) {
+          dropdown.append($('<option></option>').attr('value', entry.ai_durable_articles).text(entry.ma_durable_articles));
+      })
+  });
+}
+
+function ma_device_brandx(){
+
+    let dropdown = $('#ma_device_brandx');
   
+    dropdown.empty();
+  
+    dropdown.append('<option selected>โปรดเลือกแผนก</option>');
+    dropdown.prop('selectedIndex', 0);
+  
+    const url = "php_group/action.php?en=ma_device_brandx";
+  
+    // Populate dropdown with list of provinces
+    $.getJSON(url, function (data) {
+        $.each(data, function (key, entry) {
+            dropdown.append($('<option></option>').attr('value', entry.ai_equipment).text(entry.ma_equipment));
+        })
+    });
+  }

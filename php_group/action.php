@@ -11,14 +11,15 @@ if( $chk == "insert"){
   $ma_responsible_department = $_POST["ma_responsible_department"];
   $ma_price = $_POST["ma_price"];
   $ma_date_year = $_POST["ma_date_year"];
+  
+  
 
   insertdata($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_date_year,$conn);
 
     }else if ($chk == "showdata") {
         $ma_serial_number=$_POST["ma_serial_number"];
         showdata($ma_serial_number,$conn);
-      }
-      else if($chk == "edit"){
+      }else if($chk == "edit"){
         $ma_date = $_POST["ma_date"];
         $ma_serial_number = $_POST["ma_serial_number"];
         $ma_equipment = $_POST["ma_equipment"];
@@ -26,6 +27,7 @@ if( $chk == "insert"){
         $ma_responsible_department = $_POST["ma_responsible_department"];
         $ma_price = $_POST["ma_price"];
         $ma_date_year = $_POST["ma_date_year"];
+        
         
             edit($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_date_year,$conn);
       }else if($chk == "check"){
@@ -36,6 +38,31 @@ if( $chk == "insert"){
         $serial_number = $_POST["ma_serial_number"];
         $service_date = $_POST["service_date"];
         showinfor($ma_serial_number,$service_date,$conn);
+
+        //ดึงข้อมูลมา
+      }else if($chk == "ma_equipmentx"){
+        getelect_de($conn);
+      }else if($chk == "ma_device_brandx"){
+        getelect_ma($conn);
+      }
+      
+      //SELECTION 
+      function getelect_de($conn){
+        $data = selects("device_brand","",$conn);
+        if($data){
+          echo json_encode($data);
+        }else {
+          echo 0;
+        }
+      }
+      /////////////////////////////////////////////////////////////////////////
+      function getelect_des($conn){
+        $data = selects("equipment","",$conn);
+        if($data){
+          echo json_encode($data);
+        }else {
+          echo 0;
+        }
       }
       
       function insertdata($ma_date,$ma_serial_number,$ma_equipment,$ma_device_brand,$ma_responsible_department,$ma_price,$ma_date_year,$conn)
@@ -144,13 +171,14 @@ if($chk == "checklogin"){
       echo $data;
       if($data){
         echo json_encode($data);
-      }else if{
+      }else{
         echo 0;
-      }else if($chk == "checklogin"){
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        checknum($username,$password,$conn);
       }
+      // else if($chk == "checklogin"){
+      //   $username = $_POST["username"];
+      //   $password = $_POST["password"];
+      //   checknum($username,$password,$conn);
+      // }
     }
 
     function checkloginnum($username,$password,$conn){

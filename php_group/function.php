@@ -36,10 +36,9 @@
         $rows = array();
         while ($result = mysqli_fetch_array($dbquery)){
             $rows[] = $result;
-            
         } 
         return $rows;               
-        }
+    }
     //สุ่มเลือกข้อมูล
     function selectrand($table,$condition,$conn){
         $sql = "select * from $table $condition";
