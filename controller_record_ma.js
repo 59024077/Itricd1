@@ -171,6 +171,7 @@ function ma_equipmentx(){
   });
 }
 
+/////////ดึงข้อมูล
 function ma_device_brandx(){
 
     let dropdown = $('#ma_device_brandx');

@@ -55,6 +55,15 @@ if( $chk == "insert"){
           echo 0;
         }
       }
+      //SELECTION 
+      function getelect_ma($conn){
+        $data = selects("equipment","",$conn);
+        if($data){
+          echo json_encode($data);
+        }else {
+          echo 0;
+        }
+      }
       /////////////////////////////////////////////////////////////////////////
       function getelect_des($conn){
         $data = selects("equipment","",$conn);
@@ -170,7 +179,8 @@ if($chk == "checklogin"){
       $data = num_rows("ma_login", "WHERE username = '$username'"AND"WHERE password = '$password'", $conn);
       echo $data;
       if($data){
-        echo json_encode($data);
+        echo 1;
+        //echo json_encode($data);
       }else{
         echo 0;
       }
