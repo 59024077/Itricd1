@@ -26,6 +26,7 @@ $(document).ready(function () {
                 $("#content").html(data);
                 vals = 1;
                 txtVal = 'infor_user';
+                showlogin();
             }
         });
 

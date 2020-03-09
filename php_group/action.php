@@ -167,34 +167,61 @@ function showinfor($ma_serial_number,$service_date,$conn){
     }
 
 /////login
+
+// function checklogin($username,$password,$conn){
+//   $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'");
+//   echo $data;
+// }
+
+
+
 $chk  = $_GET["en"];
-if($chk == "checklogin"){
+if($chk == "check"){
   $username = $_POST["username"];
   $password = $_POST["password"];
-  showlogindata($username,$password, $conn);
+  checklogin($username,$password, $conn);
+}else if ($chk == "showlogin") {
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+  showlogin($username,$password,$conn);
+}else if($chk == "edit"){
+  $eid = $_POST["eid"];
+  $finger_id = $_POST["finger_id"];
+  $prefix = $_POST["prefix"];
+  $first_name = $_POST["first_name"];
+  $last_names = $_POST["last_names"];
+  $nickname = $_POST["nickname"];
+  $department_id = $_POST["department_id"];
+  $working_group = $_POST["working_group"];
+  $position = $_POST["position"];
+  
+  
+      edit($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn);
 }
-    function showlogindata($username,$password, $conn){
+
+
+
+    function showlogin($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn){
       // $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
       // echo $data;
-      $data = num_rows("ma_login", "WHERE username = '$username'"AND"WHERE password = '$password'", $conn);
+      $data = num_rows("ma_login", "WHERE username = '$username' AND password = '$password'", $conn);
       echo $data;
-      if($data){
-        echo 1;
-        //echo json_encode($data);
+    if($data){
+        //echo 1;
+        echo json_encode($data);
       }else{
         echo 0;
       }
-      // else if($chk == "checklogin"){
-      //   $username = $_POST["username"];
-      //   $password = $_POST["password"];
-      //   checknum($username,$password,$conn);
-      // }
     }
+      function checklogin($username,$password,$conn){
+        $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
+        echo $data;
+      }
 
-    function checkloginnum($username,$password,$conn){
-      $data = num_rows("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
-      echo $data;
-    }
+    // function checkloginnum($username,$password,$conn){
+    //   $data = num_rows("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
+    //   echo $data;
+    // }
 
 
 
@@ -214,4 +241,6 @@ if($chk == "checklogin"){
     //      }
     //    }
   
+
+
 ?>
