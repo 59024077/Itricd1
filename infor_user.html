@@ -21,7 +21,6 @@
 <section class="content">
     <!-- content-header -->
     <div class="card">
-    <form id="personal" onsubmit="personal();">
         <div class="card-header text-center">
             <br>
             <h3 class="mb-3">ข้อมูลส่วนตัว</h3>
@@ -119,21 +118,22 @@
             </div>
         </div>
         <div class="card-footer text-center">
-            <div class="form-row text-center pb-3">
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary mr-2">แก้ไขข้อมูล</btton>
-                    </div>
-                </div>
-            </div>
-   </form>
+   <div class="form-row text-center pb-3">
+    <div class="col-12">
+        <button onclick="personal()" class="btn btn-primary mr-2">แก้ไขข้อมูล</btton>
+    </div>
+</div>
+</div>
     </div>
     <!-- /.card-header -->
     </div>
     <!-- /.content-header -->
     <div id="hidden_data"></div>
     <div id="hidden_record"></div>
+    
 
 </section>
+<script src="controller_infor_user.js"></script>
 <!-- /.content -->
 <!-- sweetalert2-->
 <script>

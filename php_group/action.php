@@ -194,14 +194,14 @@ else if($chk == "edituser"){
   $first_name = $_POST["first_name"];
   $last_names = $_POST["last_names"];
   $nickname = $_POST["nickname"];
+  $username = $_POST["username"];
   $department_id = $_POST["department_id"];
   $working_group = $_POST["working_group"];
   $position = $_POST["position"];
   
   
-    edituser($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn);
+    edituser($username,$eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn);
 }
-
 
       function checklogin($username,$password,$conn){
         $data = select ("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
@@ -209,6 +209,7 @@ else if($chk == "edituser"){
         // if($data == 1){
         //  $_SESSION["username"] = $username;
         // }
+
         if($data){
           echo json_encode($data);
         }else{
@@ -227,7 +228,7 @@ else if($chk == "edituser"){
           echo 0;
         }
       }
-      function edituser($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn)
+      function edituser($username,$eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn)
       {
         $data = update("ma_login",
                       "eid = '$eid',finger_id ='$finger_id',prefix = '$prefix',
