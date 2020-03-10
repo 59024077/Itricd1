@@ -1,3 +1,4 @@
+
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
@@ -20,6 +21,7 @@
 <section class="content">
     <!-- content-header -->
     <div class="card">
+    <form id="personal" onsubmit="personal();">
         <div class="card-header text-center">
             <br>
             <h3 class="mb-3">ข้อมูลส่วนตัว</h3>
@@ -116,6 +118,14 @@
                 </div>
             </div>
         </div>
+        <div class="card-footer text-center">
+            <div class="form-row text-center pb-3">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary mr-2">แก้ไขข้อมูล</btton>
+                    </div>
+                </div>
+            </div>
+   </form>
     </div>
     <!-- /.card-header -->
     </div>
@@ -127,6 +137,7 @@
 <!-- /.content -->
 <!-- sweetalert2-->
 <script>
+    
     $('#service_date').daterangepicker({
         singleDatePicker: true,
         showDropdowns: true,

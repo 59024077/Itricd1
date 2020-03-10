@@ -1,15 +1,15 @@
 var vals;
 var txtVal;
 $(document).ready(function () {
-    var statusLogin = 1; //sessionStorage.getItem("login"); // login
+    var statusLogin = sessionStorage.getItem("username") != null ? 1:0; //sessionStorage.getItem("login"); // login
     if (statusLogin == 1) {
         sessionStorage.setItem("login", 1);
-        $('.showname').html(sessionStorage.getItem("showname"));
-        $('.fullname').html(sessionStorage.getItem("fullname"));
+        
+        $('.fullname').html(sessionStorage.first_name+" "+sessionStorage.last_names);
     } else {
         //var urlLogin = getFileConfig+'/login/login.html';
         // var urlLogin = '/Screenning/login.html';
-        // window.location = urlLogin;
+        window.location = 'login.html';
     }
 
     $('#hidden').hide();
@@ -19,7 +19,7 @@ $(document).ready(function () {
         e.stopImmediatePropagation();
 
         $('.contentServiceArea').html('');
-
+        
         $.ajax({
             url: "infor_user.html",
             success: function (data) {
@@ -27,6 +27,7 @@ $(document).ready(function () {
                 vals = 1;
                 txtVal = 'infor_user';
                 showlogin();
+                getData();
             }
         });
 
@@ -104,11 +105,39 @@ $(document).ready(function () {
 
 });
 
+function getData() {
+    console.log("data");
+    $.ajax({
+        async: true,
+        url: "php_group/action.php?en=getUserData",
+        type: "POST",
+        data: {
+            username: sessionStorage.username
+        },
+        success: function (data) {
+            console.log(data);
+            var dataJSON = JSON.parse(data);
+            
+            $("#eid").val(dataJSON.eid);
+            $("#finger_id").val(dataJSON.finger_id);
+            $("#prefix").val(dataJSON.prefix);
+            $("#first_name").val(dataJSON.first_name);
+            $("#last_names").val(dataJSON.last_names);
+            $("#nickname").val(dataJSON.nickname);
+            $("#department_id").val(dataJSON.department_id);
+            $("#working_group").val(dataJSON.working_group);
+            $("#position").val(dataJSON.position);
+        }
+    }); 
+}
+
 //go page index
 function fn_index(){
     $("#content").html('');
 }
-
+function logout(){
+    sessionStorage.clear();
+}
 function scr_vitis(){
     var service_date = $('#service_date').val()
             var dateAr1 = service_date.split('/');

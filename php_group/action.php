@@ -1,6 +1,7 @@
 <?php
 include("connect.php");
 include("function.php");
+session_start();
 
 $chk  = $_GET["en"];
 if( $chk == "insert"){
@@ -166,25 +167,27 @@ function showinfor($ma_serial_number,$service_date,$conn){
       echo $data;
     }
 
-/////login
+    
 
-// function checklogin($username,$password,$conn){
-//   $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'");
-//   echo $data;
-// }
+////////////////////////////////login
 
 
 
 $chk  = $_GET["en"];
-if($chk == "check"){
+if($chk == "checklogin"){
   $username = $_POST["username"];
   $password = $_POST["password"];
-  checklogin($username,$password, $conn);
-}else if ($chk == "showlogin") {
+  $data = checklogin($username,$password, $conn);
+  // sessionStorage.checklogin($username,$password, $conn);
+  echo $data;
+}
+else if($chk == "getUserData"){
   $username = $_POST["username"];
-  $password = $_POST["password"];
-  showlogin($username,$password,$conn);
-}else if($chk == "edit"){
+  $data = select ("ma_login","WHERE username = '$username'",$conn);
+  echo json_encode($data);
+}
+
+else if($chk == "edituser"){
   $eid = $_POST["eid"];
   $finger_id = $_POST["finger_id"];
   $prefix = $_POST["prefix"];
@@ -196,51 +199,68 @@ if($chk == "check"){
   $position = $_POST["position"];
   
   
-      edit($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn);
+    edituser($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn);
 }
 
 
-
-    function showlogin($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn){
-      // $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
-      // echo $data;
-      $data = num_rows("ma_login", "WHERE username = '$username' AND password = '$password'", $conn);
-      echo $data;
-    if($data){
-        //echo 1;
-        echo json_encode($data);
-      }else{
-        echo 0;
-      }
-    }
       function checklogin($username,$password,$conn){
-        $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
-        echo $data;
+        $data = select ("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
+        
+        // if($data == 1){
+        //  $_SESSION["username"] = $username;
+        // }
+        if($data){
+          echo json_encode($data);
+        }else{
+          echo 0;
+        }
       }
+      function showlogin($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn){
+        // $data = num_rows("ma_login","WHERE username = '$username' AND password = '$password'",$conn);
+        // echo $data;
+        $data = num_rows("ma_login", "WHERE username = '$username' AND password = '$password'", $conn);
+        echo $data;
+      if($data){
+          //echo 1;
+          echo json_encode($data);
+        }else{
+          echo 0;
+        }
+      }
+      function edituser($eid,$finger_id,$prefix,$first_name,$last_names,$nickname,$department_id,$working_group,$position, $conn)
+      {
+        $data = update("ma_login",
+                      "eid = '$eid',finger_id ='$finger_id',prefix = '$prefix',
+                      first_name = '$first_name',last_names = '$last_names',nickname = '$nickname',
+                      department_id = '$department_id',working_group = '$working_group',working_group = '$working_group'",
+                      "WHERE username = '$username'",$conn);
+                      
+        if ($data) {
+          echo 1;
+        } else {
+          echo 2;
+        }
+      }
+      // function logout(){
+      //   session_destroy();
+      //   echo 1;
+      // }
+      //infor_user//
+      // session_start();
+      // include("php_group/connect.php");
+      // include("php_group/function.php");
+      //     $data = select("ma_login","where username='".$_SESSION['username']."'",$conn);
+      
 
-    // function checkloginnum($username,$password,$conn){
-    //   $data = num_rows("ma_login", "WHERE username = '$username'","WHERE password = '$password'", $conn);
-    //   echo $data;
-    // }
 
-
-
-    // if( $chk == "getdata"){
-    
-    //   getdatadata();
-    //     }
-    //     function getdatadata()
-    //     {
-    //       $data = selects("device_brand", 
-    //       "",
-    //       $conn);
-    //      if($data){
-    //       echo json_encode($data);
-    //      }else{
-    //       echo 2; 
-    //      }
-    //    }
-  
+///index//
+// session_start();
+// include("php_group/connect.php");
+// include("php_group/function.php");
+//     if(is_null($_SESSION["username"])){
+//         header("Location:login.html");
+//     }
+//     $data = select("ma_login","where username='".$_SESSION['username']."'",$conn);
 
 
 ?>

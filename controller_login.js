@@ -8,25 +8,34 @@ function lo_log() {
     $.ajax({
         async: true,
         url: "php_group/action.php?en=checklogin",
+        method: "post", 
         data: {
             username: username, 
             password: password
         },
         success: function (data) {
-            console.log(data);
-            if (data == 1) {
+
+            if (data != 0) {
+                var dataJSON = JSON.parse(data); //เปลี่ยน string json ให้เป็น Object
+                sessionStorage.username = dataJSON.username;
+                sessionStorage.first_name = dataJSON.first_name;
+                sessionStorage.last_names = dataJSON.last_names;
+                
+                console.log("data is"+sessionStorage.username);
                 Swal.fire({
+                    
                     type: 'success',
-                    title: 'OK',
+                    title: 'เข้าสู่ระบบสำเร็จ',
                     showConfirmButton: false,
                     timer: 1500
+                }).then((result)=>{
+                    location.href="index.html";
                 })
-
             } else {
-
+                
                 Swal.fire({
                     type: 'error',
-                    title: 'error',
+                    title: 'กรุณากรอกรหัสใหม่',
                     showConfirmButton: false,
                     timer: 1500
                 })
@@ -65,7 +74,7 @@ function showlogin() {
     var password = $("#password").val();
     $.ajax({
         async: true,
-        url: "php_group/action.php?en=showlogindata",
+        url: "php_group/action.php?en=showlogin",
         type: "POST",
         data: {
             username: username,

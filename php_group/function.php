@@ -59,8 +59,8 @@
     $sql = "select * from $table $condition";
     // return $sql ; die;
     $dbquery = $conn->query($sql);
-    // $num_rows = $dbquery->num_rows;
-    // return $num_rows;
+    $num_rows = $dbquery->num_rows;
+     return $num_rows;
     // return $sql;
     }
     #Close DB Connetion
@@ -472,4 +472,6 @@
     function curPageName() {
      return substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
     }
+
+    
 ?>
