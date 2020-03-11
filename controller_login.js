@@ -43,29 +43,6 @@ function lo_log() {
 
         }
     });
-
-    
-
-    // if (username != ""||password !="") {
-    //     console.log(username);
-    //     console.log(password);
-
-
-    //     $.ajax({
-    //         url: "infor_user.html",
-    //         success: function (data) {
-    //             $("#hidden_record").html(data);
-    //            showlogin();
-
-    //         }    
-    //     });
-    // }else if(username == ""||password == ""){
-    //     swal.fire({
-    //         type: "error",
-    //         title: 'ผิดพลาด',
-    //         text: "กุณากรอกเลขครุภัณฑ์"
-    //     });
-    // }
 }
 
 
@@ -99,29 +76,3 @@ function showlogin() {
         }
     });
 }
-
-
-// function lo_log() {
-//     var username = $('#username').val();
-//     var password = $('#password').val();
-//     console.log(username,password);
-//     if (username != "" || password !="") {
-//         console.log(username);
-//         console.log(password);
-        
-//         $.ajax({
-//             url: "infor_user.html",
-//             success: function (data) {
-//                 $("#hidden_record").html(data);
- 
-//             }    
-//         });
-//     }else if(username == "" || password == ""){
-//         swal.fire({
-//             type: "error",
-//             title: 'ผิดพลาด',
-//             text: "กุณากรอกเลขครุภัณฑ์"
-//         });
-//     }
-// }
-    

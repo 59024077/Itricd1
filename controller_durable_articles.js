@@ -3,6 +3,16 @@ function ma_durable_articless() {
 
     var ma_durable_articles = $("#ma_durable_articles").val();
 
+    if(ma_durable_articles == ""){
+        Swal.fire({
+            type: 'error',
+            title: 'เพิ่มข้อมูลไม่สำเร็จ',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        return false;
+    }
+
    $.ajax({
     async: true,
     url: "php_group/action.php?en=checkss",
@@ -25,25 +35,36 @@ function ma_durable_articless() {
                     
                     console.log(data);
                     if (data == 1) {
-                        Swal.fire({
-                            type: 'success',
-                            title: 'เพิ่มข้อมูลสำเร็จ',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        clearsessionStorage();
-        
-                    } else {
-                        Swal.fire({
-                            type: 'error',
-                            title: 'เพิ่มข้อมูลไม่สำเร็จ',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    }
+                    Swal.fire({
+                        type: 'success',
+                        title: 'เพิ่มข้อมูลสำเร็จ',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    clearsessionStorage();
+
+                }
                 }
             });
         }
     }
 });
 }
+
+// if (data == 1) {
+//     Swal.fire({
+//         type: 'success',
+//         title: 'เพิ่มข้อมูลสำเร็จ',
+//         showConfirmButton: false,
+//         timer: 1500
+//     })
+//     clearsessionStorage();
+
+// } else {
+//     Swal.fire({
+//         type: 'error',
+//         title: 'เพิ่มข้อมูลไม่สำเร็จ',
+//         showConfirmButton: false,
+//         timer: 1500
+//     })
+// }

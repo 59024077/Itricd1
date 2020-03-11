@@ -1,10 +1,11 @@
 // การ save ข้อมูล
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-  });
+    $('[data-toggle="tooltip"]').tooltip();   
+});
 
 
 function savehot() {
+    
 
     var dogta_ID = $("#dogta_ID").val();
     var fa_text2 = $("#fa_text2").val()||"";

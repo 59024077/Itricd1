@@ -101,6 +101,7 @@ function saveand() {
         }
     });
 }
+
 function showall() {
     var ma_serial_number = $("#ma_serial_number").val();
     $.ajax({
