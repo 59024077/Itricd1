@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<head>
+  
+    <title>แบบฟอร์มบันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์</title>
+</head>
+
+<body>
+    <div class="containerfull">
+        <div class="accordion" id="accordlonExample">
+            <div class="card card-info">
+                <div class="card-header" id="headingOne">
+                    <h3 class="mb-0" style="color: #ffffff;">
+                        <i class="far fa-edit pr-10"> แบบฟอร์มบันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์</i>
+                </div>
+                <div class="accordion" id="accordlonExample">
+                    <form id="savehot" onsubmit="savehot(); return false;">
+                        <div class="row">
+                            <div class="mx-auto">
+                              
+                          <table class= "mx-auto table table-bordered">
+                            <thead>
+                              <tr class="text-center">
+                                <th colspan="1">วันที่</th>
+                                  <th colspan="2">
+                                    <a type="text"  class = "text-dark"   data-toggle = "tooltip"   data-html = "true" 
+                                 data-placement = "right"   title = "การทำความสะอาดเครื่องคอมพิวเตอร์และอุปกรณ์คอมพิวเตอร์" > 
+                                 1                       
+                                </a>
+                                  </th>
+                                <th colspan="2">
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true" 
+                                 data-placement = "right"   title = "การตรวจจับไรัสคอมพิวเตอร์" > 
+                                 2
+                                </a> 
+                                </th>
+                                <th colspan="3">
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true" 
+                                data-placement = "right"   title = "การรุงรักษา Hard Disk ให้ปฏิบัติอย่างน้อยเดือนละ 1 ครั้ง" > 
+                                 3
+                                </th>
+                                <th colspan="3">ผู้ปฏิบัติ</th>
+                              </tr>
+                            </thead>
+                        
+                            <tbody>
+                              <tr>
+                                
+                                <td></td>
+                                <td class="text-center" >
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true"   data-placement = "right"   
+                                  title = "ภายนอก : โดยใช้น้ำยาเช็ดทำความสะอาดอุปรณ์คอมพิวเตอร์ อย่างน้อยเดือนละ 1ครั้ง" >      
+                                     1
+                                   </a>
+                                </td>
+                                <td class="text-center" >
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true"   data-placement = "right"   
+                                  title = "ภายใน : โดยการเป่าฝุ่นภายในตัวเครื่องคอมพิวเตอร์ อย่างน้อยปีละ 1ครั้ง" >        
+                                   2      
+                                </td>
+                                <td class="text-center" >
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true"   data-placement = "right"  
+                                  title = "ทำการ Update รายชื่อไวรัส (Definition files virus)อย่างน้อยสัปดาห์ละ 1ครั้ง" > 
+                                   1
+                                  </a> 
+                                </td>
+                                <td class="text-center" >
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true"   data-placement = "right"   
+                                  title = "ทำการScan Virus แบบ Full System ที่เครื่องคอมพิวเตอร์  อย่างน้อยสัปดาห์ละ 1ครั้ง" > 
+                                  2
+                                  </a>
+                                </td>
+                                <td class="text-center" >
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true"   data-placement = "right"  
+                                   title = "ลบไล์ที่เป็นไฟล์ขยธ เช่น Temporay Files,Tempory Internet Files,Cookies Files และ Empty ไฟล์ใน Recycle Bin ฯลฯ" > 
+                                    1
+                                      </a>
+                                </td>
+                                <td class="text-center" >
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true"   data-placement = "right"  
+                                  title = "ทำการตรวจสอบ Hard Disk ด้วยโปรแกรม Disk Cleanup หรือ Scandisk ใน System tools" > 
+                                    2
+                                    </a>
+                                </td>
+                                <td class="text-center" >
+                                  <a  class = "text-dark"   data-toggle = "tooltip"   data-html = "true"   data-placement = "right"  
+                                  title = "ทำการจัดระเบียบ Hard Disk ด้วยโปรแกรม Disk Defragmeter  ใน System tools" > 
+                                  3
+                                </a>
+                                </td>
+                                <td></td>
+                              </tr>
+                              <tr>
+                                <td>มกราคม </td>
+                                
+                                <td><input class="input-group-text mx-auto " style="height: 15px; width: 15px;" name="fa_yourself" type="checkbox" id="fa_have1" value="1" ></td>
+                                <td><input class="input-group-text mx-auto " style="height: 15px; width: 15px;" name="fa_yourself1" type="checkbox" id="fa_none1" value="1" ></td>
+                                <td><input class="input-group-text mx-auto " style="height: 15px; width: 15px;" name="fa_yourself2" type="checkbox" id="fa_hav1" value="1" ></td>
+                                <td><input class="input-group-text mx-auto " style="height: 15px; width: 15px;" name="fa_yourself3" type="checkbox" id="fa_non1" value="1" ></td>
+                                <td><input class="input-group-text mx-auto " style="height: 15px; width: 15px;" name="fa_yourself4" type="checkbox" id="fa_ha1" value="1" ></td>
+                                <td><input class="input-group-text mx-auto " style="height: 15px; width: 15px;" name="fa_yourself5" type="checkbox" id="fa_no1" value="1" ></td>
+                                <td><input class="input-group-text mx-auto " style="height: 15px; width: 15px;" name="fa_yourself6" type="checkbox" id="fa_h1" value="1" ></td>
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text2" id="fa_text2" disabled></td>
+                              </tr>
+                              <tr>
+                                <td>กุมภาพันธ์ </td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt_others" type="checkbox" id="fa_have2" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt_others1" type="checkbox" id="fa_none2" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt_others2" type="checkbox" id="fa_hav2" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt_others3" type="checkbox" id="fa_non2" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt_others4" type="checkbox" id="fa_ha2" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt_others5" type="checkbox" id="fa_no2" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt_others6" type="checkbox" id="fa_h2" value="1" ></td>
+                        
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text3" id="fa_text3" disabled></td>
+                              </tr>
+                              <tr>
+                                <td>มีนาคม </td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_destroy_items" type="checkbox" id="fa_have3" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_destroy_items1" type="checkbox" id="fa_none3" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_destroy_items2" type="checkbox" id="fa_hav3" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_destroy_items3" type="checkbox" id="fa_non3" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_destroy_items4" type="checkbox" id="fa_ha3" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_destroy_items5" type="checkbox" id="fa_no3" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_destroy_items6" type="checkbox" id="fa_h3" value="1" ></td>
+                              
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text4" id="fa_text4" disabled></td>
+                              </tr>
+                              <tr>
+                                <td >เมษายน</td>
+                                
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt" type="checkbox" id="fa_have4" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt1" type="checkbox" id="fa_none4" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt2" type="checkbox" id="fa_hav4" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt3" type="checkbox" id="fa_non4" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt4" type="checkbox" id="fa_ha4" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt5" type="checkbox" id="fa_no4" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_hurt6" type="checkbox" id="fa_h4" value="1" ></td>
+                              
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text5" id="fa_text5" disabled></td>
+                              </tr>
+                              <tr>
+                                <td>พฤษภาคม</td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_out_hospita" type="checkbox" id="fa_have5" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_out_hospita1" type="checkbox" id="fa_none5" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_out_hospita2" type="checkbox" id="fa_hav5" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_out_hospita3" type="checkbox" id="fa_non5" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_out_hospita4" type="checkbox" id="fa_ha5" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_out_hospita5" type="checkbox" id="fa_no5" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_out_hospita6" type="checkbox" id="fa_h5" value="1" ></td>
+                         
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text6" id="fa_text6" disabled></td>
+                              </tr>
+                              <tr>
+                                <td>มิถุนายน</td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_walk_out" type="checkbox" id="fa_have6" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_walk_out1" type="checkbox" id="fa_none6" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_walk_out2" type="checkbox" id="fa_hav6" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_walk_out3" type="checkbox" id="fa_non6" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_walk_out4" type="checkbox" id="fa_ha6" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_walk_out5" type="checkbox" id="fa_no6" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_walk_out6" type="checkbox" id="fa_h6" value="1" ></td>
+                         
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text7" id="fa_text7" disabled></td>
+                              </tr>
+                              <tr>
+                                <td>กรกฎาคม</td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_balance" type="checkbox" id="fa_have7" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_balance1" type="checkbox" id="fa_none7" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_balance2" type="checkbox" id="fa_hav7" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_balance3" type="checkbox" id="fa_non7" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_balance4" type="checkbox" id="fa_ha7" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_balance5" type="checkbox" id="fa_no7" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_balance6" type="checkbox" id="fa_h7" value="1" ></td>
+                        
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text11" id="fa_text8" disabled></td>
+                              </tr>
+                              <tr>
+                              <td>สิงหาคม</td>
+                              <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="equilibrium" type="checkbox" id="fa_have8" value="1" ></td>
+                              <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="equilibrium1" type="checkbox" id="fa_none8" value="1" ></td>
+                              <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="equilibrium2" type="checkbox" id="fa_hav8" value="1" ></td>
+                              <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="equilibrium3" type="checkbox" id="fa_non8" value="1" ></td>
+                              <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="equilibrium4" type="checkbox" id="fa_ha8" value="1" ></td>
+                              <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="equilibrium5" type="checkbox" id="fa_no8" value="1" ></td>
+                              <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="equilibrium6" type="checkbox" id="fa_h8" value="1" ></td>
+                        
+                              <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text11" id="fa_text9" disabled></td>
+                            </tr>
+                        
+                              <tr>
+                                <td >กันยายน</td>
+                               
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_heart_disease" type="checkbox" id="fa_have9" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_heart_disease1" type="checkbox" id="fa_none9" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_heart_disease2" type="checkbox" id="fa_hav9" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_heart_disease3" type="checkbox" id="fa_non9" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_heart_disease4" type="checkbox" id="fa_ha9" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_heart_disease5" type="checkbox" id="fa_no9" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_heart_disease6" type="checkbox" id="fa_h9" value="1" ></td>
+                        
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text8" id="fa_text10" disabled></td>
+                              </tr>
+                              <tr>
+                                <td>ตุลาคม</td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_tired_easily" type="checkbox" id="fa_have10" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_tired_easily1" type="checkbox" id="fa_none10" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_tired_easily2" type="checkbox" id="fa_hav10" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_tired_easily3" type="checkbox" id="fa_non10" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_tired_easily4" type="checkbox" id="fa_ha10" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_tired_easily5" type="checkbox" id="fa_no10" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_tired_easily6" type="checkbox" id="fa_h10" value="1" ></td>
+                        
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text9" id="fa_text11" disabled></td>
+                              </tr>
+                              <tr>
+                                <td >พฤศจิกายน</td>
+                              
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_fall_flat" type="checkbox" id="fa_have11" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_fall_flat1" type="checkbox" id="fa_none11" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_fall_flat2" type="checkbox" id="fa_hav11" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_fall_flat3" type="checkbox" id="fa_non11" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_fall_flat4" type="checkbox" id="fa_ha11" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_fall_flat5" type="checkbox" id="fa_no11" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_fall_flat6" type="checkbox" id="fa_h11" value="1" ></td>
+                        
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text10" id="fa_text12" disabled></td>
+                              </tr>
+                              <tr>
+                                <td>ธันวาคม</td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_well" type="checkbox" id="fa_have12" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_well1" type="checkbox" id="fa_none12" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_well2" type="checkbox" id="fa_hav12" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_well3" type="checkbox" id="fa_non12" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_well4" type="checkbox" id="fa_ha12" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_well5" type="checkbox" id="fa_no12" value="1" ></td>
+                                <td><input class="input-group-text mx-auto" style="height: 15px; width: 15px;" name="fa_well6" type="checkbox" id="fa_h12" value="1" ></td>
+                          
+                                <td><input type="text" style="width: 470px;" class="form-control rounded-0" name="fa_text11" id="fa_text13" disabled></td>
+                              </tr>
+                        
+                            </tbody>
+                          </table>
+                         
+                            </div>
+                          </div>
+                        <div class="card-footer text-center">
+                            <div class="form-row text-center pb-3">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary mr-2">บันทึกข้อมูล</btton>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+</body>
+
+</html>
+<script src="controller_maintain_ma.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

@@ -17,9 +17,9 @@ function lo_log() {
 
             if (data != 0) {
                 var dataJSON = JSON.parse(data); //เปลี่ยน string json ให้เป็น Object
-                sessionStorage.username = dataJSON.username;
-                sessionStorage.first_name = dataJSON.first_name;
-                sessionStorage.last_names = dataJSON.last_names;
+                sessionStorage.username = dataJSON.username;  //เก็บ username ใว้ใน sessionStorage
+                sessionStorage.first_name = dataJSON.first_name; //ทำการเรียก first_name แล้วเก็บใว้ในsessionStorage
+                sessionStorage.last_names = dataJSON.last_names; //ทำการเรียก first_name แล้วเก็บใว้ในsessionStorage
                 
                 console.log("data is"+sessionStorage.username);
                 Swal.fire({

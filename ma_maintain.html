@@ -8,7 +8,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">บันทึกการจัดสรรอุปกรณ์เครื่องคอมพิวเตอร์</li>
+                    <li class="breadcrumb-item active">แบบฟอร์มบันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -22,7 +22,7 @@
     <div class="card">
         <div class="card-header text-center">
             <br>
-            <h3 class="mb-3">บันทึกการจัดสรรอุปกรณ์เครื่องคอมพิวเตอร์</h3>
+            <h3 class="mb-3">แบบฟอร์มบันทึกการบำรุงรักษาเครื่องคอมพิวเตอร์</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -30,7 +30,7 @@
                 <div class="form-group col-mx px-0">
                     <div class="input-group">
                         <div class="input-group-prepend">                                   
-                            <label class="input-group-text rounded-0">วันที่กรอกข้อมูล</label>
+                            <label class="input-group-text rounded-0">วันที่มารับบริการ</label>
                             <input id="service_date" class="form-control rounded-0">
                         </div>
                     </div>
@@ -40,13 +40,13 @@
                         <div class="col-10">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">เลขครุภัณฑ์</label>
+                                    <label class="input-group-text" for="inputGroupSelect01">ชื่อเครื่อง</label>
                                 </div>
-                                <input type="varchar" class="form-control" id="ma_serial_number" name="ma_serial_number">
+                                <input type="varchar" class="form-control" id="dogta_ID" name="dogta_ID">
                             </div>
                         </div>
                         <div class="col-2">
-                            <button type="button" class="btn btn-success" onclick="add_ma()" id="add_mas"><i class="fas fa-plus"></i></button>
+                            <button type="button" class="btn btn-success" onclick="add_maaa()" id="add_maaas"><i class="fas fa-plus"></i></button>
                         </div>
                     </div>
                 </div>
@@ -68,6 +68,6 @@
         }
     });
 </script>
-<script src="controller_record_ma.js"></script>
+<script src="controller_maintain_ma.js"></script>
 <!-- /.content -->
 <!-- sweetalert2-->

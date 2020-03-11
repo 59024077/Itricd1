@@ -50,6 +50,24 @@ $(document).ready(function () {
         });
 
     });
+    //---------- ดึงหน้า ma_maintain.html มาแสดง -------------------//
+    $("#ma_maintain").on("click", function (e) {
+        e.stopImmediatePropagation();
+
+        $('.contentServiceArea').html('');
+
+        $.ajax({
+            url: "ma_maintain.html",
+            success: function (data) {
+                $("#content").html(data);
+                vals = 3;
+                txtVal = 'ma_maintain';
+
+            }
+        });
+
+    });
+
 
     //---------- ดึงหน้า ma_history.html มาแสดง -------------------//
     $("#ma_history").on("click", function (e) {
@@ -150,7 +168,8 @@ function scr_vitis(){
         url: "PHP_GROUP/action.php?en=showinfor",
         type: "POST",
         data: { service_date: SearchDate, 
-            ma_serial_number: ma_serial_number
+            ma_serial_number: ma_serial_number,
+            dogta_ID: dogta_ID
         },
         success: function (data) {
             if (data != 0) {
@@ -227,21 +246,45 @@ function add_ma() {
     }
 }
 
-
+////////////////////////////////////////////////////////////
+function add_maaa() {
+    var dogta_ID = $('#dogta_ID').val();
+    console.log(dogta_ID);
+    if (dogta_ID != "") {
+        console.log(dogta_ID);
+       
+        $.ajax({
+            url: "maintain_ma.html",
+            success: function (data) {
+                $("#hidden_record").html(data);
+               showallmix();
+         
+            // getdatadata();
+                
+            }    
+        });
+    }else if(dogta_ID == ""){
+        swal.fire({
+            type: "error",
+            title: 'ผิดพลาด',
+            text: "กุณากรอกชื่อเครื่อง"
+        });
+    }
+}
 
 //////////////////////////////////////////////////////////////////
     //Date picker
 
 
 // fn show record_usecar.html
-function saveand() {
-        $.ajax({
-            url: "record_ma.html",
-            success: function (data) {
-                $("#ma_record").html(data);
-            }
-        });
-}
+// function saveand() {
+//         $.ajax({
+//             url: "record_ma.html",
+//             success: function (data) {
+//                 $("#ma_record").html(data);
+//             }
+//         });
+// }
 
 
 // fn show table record_usecar.html
